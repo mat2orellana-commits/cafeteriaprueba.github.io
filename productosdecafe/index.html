@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos — Cafetería Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CAFETERÍA ESCOLAR</h1>
+        
+        <div class="form-section">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" placeholder="Nombre del estudiante" required>
+
+            <label for="producto">Producto:</label>
+            <select id="producto">
+                <option value="Pupusa">Pupusa ($0.75)</option>
+                <option value="Hamburguesa">Hamburguesa ($2.50)</option>
+                <option value="Pizza">Pizza ($2.00)</option>
+                <option value="Taco">Taco ($1.50)</option>
+                <option value="Jugo">Jugo ($1.00)</option>
+                <option value="Agua">Agua ($0.75)</option>
+            </select>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="1" value="1" required>
+
+            <label>Método de pago:</label>
+            <div class="radio-group">
+                <input type="radio" id="efectivo" name="pago" value="Efectivo" checked>
+                <label for="efectivo">Efectivo</label>
+                
+                <input type="radio" id="tarjeta" name="pago" value="Tarjeta">
+                <label for="tarjeta">Tarjeta</label>
+            </div>
+
+            <button onclick="realizarPedido()">REALIZAR PEDIDO</button>
+            <button onclick="descargarTXT()" class="btn-secondary">Descargar pedidos.txt</button>
+        </div>
+
+        <div id="recibo" class="ticket hidden">
+            <!-- Aquí se mostrará el recibo -->
+        </div>
+
+        <hr>
+
+        <div class="file-section">
+            <label for="archivoTexto" class="file-label">CARGAR PEDIDOS.TXT</label>
+            <input type="file" id="archivoTexto" accept=".txt" onchange="cargarPedidos(event)">
+        </div>
+
+        <div id="tabla-container" class="hidden">
+            <table id="tabla-pedidos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                    <!-- Los registros cargados aparecerán aquí -->
+                </tbody>
+            </table>
+
+            <div id="resumen-ventas" class="ticket">
+                <!-- El reto adicional de resumen aparecerá aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

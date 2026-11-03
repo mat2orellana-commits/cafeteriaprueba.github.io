@@ -1,0 +1,3 @@
+001|Carlos López|12345678|16|1.er Desarrollo de Software|A|carlos@gmail.com|70000000
+002|Ana Martínez|12345679|16|1.er Desarrollo de Software|B|ana@gmail.com|71111111
+003|José Hernández|12345680|17|1.er Desarrollo de Software|A|jose@gmail.com|72222222

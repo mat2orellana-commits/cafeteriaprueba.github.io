@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control de notas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Control de notas</h1>
+  <p class="sub">Ingresa los datos del estudiante y calcula su promedio.</p>
+
+  <form id="f" novalidate>
+    <div class="field">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" autocomplete="off" required>
+    </div>
+    <div class="field">
+      <label for="nie">NIE</label>
+      <input id="nie" type="text" inputmode="numeric" autocomplete="off" required>
+    </div>
+    <div class="grid">
+      <div class="field"><label for="n1">Nota 1</label><input id="n1" type="number" min="0" max="10" step="0.01" required></div>
+      <div class="field"><label for="n2">Nota 2</label><input id="n2" type="number" min="0" max="10" step="0.01" required></div>
+      <div class="field"><label for="n3">Nota 3</label><input id="n3" type="number" min="0" max="10" step="0.01" required></div>
+      <div class="field"><label for="ex">Examen</label><input id="ex" type="number" min="0" max="10" step="0.01" required></div>
+    </div>
+    <p class="hint">Las notas van de 0 a 10.</p>
+    <button type="submit">CALCULAR</button>
+    <p class="err" id="err" role="alert"></p>
+  </form>
+
+  <section id="resultado" aria-live="polite">
+    <p class="quien" id="quien"></p>
+    <div class="valor" id="valor"></div>
+    <div class="estado" id="estado"></div>
+    <p class="formula">Promedio = (Nota 1 + Nota 2 + Nota 3 + Examen) / 4</p>
+    <button type="button" id="guardar" class="secundario">GUARDAR EN .TXT</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

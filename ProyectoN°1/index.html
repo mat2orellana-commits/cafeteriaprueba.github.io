@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Registro Estudiantil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Registro estudiantil</h1>
+  <p class="sub">Sistema de Registro Estudiantil</p>
+
+  <form id="formulario" novalidate>
+    <div class="campo">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" autocomplete="off">
+    </div>
+    <div class="campo">
+      <label for="nie">NIE</label>
+      <input id="nie" type="text" inputmode="numeric" autocomplete="off">
+    </div>
+    <div class="fila">
+      <div class="campo">
+        <label for="edad">Edad</label>
+        <input id="edad" type="number" min="5" max="99">
+      </div>
+      <div class="campo">
+        <label for="seccion">Sección</label>
+        <select id="seccion">
+          <option value="">Seleccionar</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+      </div>
+    </div>
+    <div class="campo">
+      <label for="grado">Grado</label>
+      <select id="grado">
+        <option value="">Seleccionar</option>
+        <option>1.er Desarrollo de Software</option>
+        <option>2.o Desarrollo de Software</option>
+        <option>3.er Desarrollo de Software</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="correo">Correo</label>
+      <input id="correo" type="email" autocomplete="off">
+    </div>
+    <div class="campo">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" type="tel" inputmode="numeric" autocomplete="off">
+    </div>
+
+    <button type="submit" class="principal">REGISTRAR ESTUDIANTE</button>
+    <p id="mensaje" role="alert"></p>
+  </form>
+
+  <section>
+    <h2>Estudiantes registrados</h2>
+    <div class="acciones">
+      <button type="button" id="descargar" class="secundario">DESCARGAR ESTUDIANTES.TXT</button>
+      <label class="boton secundario" for="archivo">CARGAR ARCHIVO TXT</label>
+      <input id="archivo" type="file" accept=".txt,text/plain" hidden>
+    </div>
+
+    <div class="tabla-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th><th>Nombre</th><th>NIE</th><th>Edad</th>
+            <th>Grado</th><th>Sección</th><th>Correo</th><th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody id="tabla">
+          <tr><td colspan="8" class="vacio">Aún no hay estudiantes. Registra el primero con el formulario.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Contenido de estudiantes.txt</h2>
+    <p class="nota">Cada línea es un registro y cada dato separado por | es un campo.</p>
+    <pre id="vista">(vacío)</pre>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
